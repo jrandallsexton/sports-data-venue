@@ -8,12 +8,19 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{BCB615A5-15C8-4F66-8BF5-06BCC5D1CF8C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{82ADD89A-2002-42BB-A058-3EF7777395B0}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.gitignore = .gitignore
+		azure-pipelines.yml = azure-pipelines.yml
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsData.Venue", "src\SportsData.Venue\SportsData.Venue.csproj", "{3E5818AF-A4AB-4632-9568-E67C224CFDA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsData.Venue", "src\SportsData.Venue\SportsData.Venue.csproj", "{3E5818AF-A4AB-4632-9568-E67C224CFDA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsData.Venue.Tests.Unit", "test\SportsData.Venue.Tests.Unit\SportsData.Venue.Tests.Unit.csproj", "{7D124567-DD80-4CF8-B3B1-EC25AAB5AB27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsData.Venue.Tests.Unit", "test\SportsData.Venue.Tests.Unit\SportsData.Venue.Tests.Unit.csproj", "{7D124567-DD80-4CF8-B3B1-EC25AAB5AB27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsData.Venue.Tests.Integration", "test\SportsData.Venue.Tests.Integration\SportsData.Venue.Tests.Integration.csproj", "{92F921D5-95F8-4B80-BE0A-CECB19D5BA8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsData.Venue.Tests.Integration", "test\SportsData.Venue.Tests.Integration\SportsData.Venue.Tests.Integration.csproj", "{92F921D5-95F8-4B80-BE0A-CECB19D5BA8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

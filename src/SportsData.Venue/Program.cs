@@ -1,3 +1,8 @@
+using Serilog;
+
+using SportsData.Core.DependencyInjection;
+using SportsData.Core.Middleware;
+using SportsData.Venue.Data;
 
 namespace SportsData.Venue
 {
@@ -10,9 +15,19 @@ namespace SportsData.Venue
             // Add services to the container.
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddHttpContextAccessor();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            // Add Serilog
+            builder.Host.UseSerilog((context, configuration) =>
+            {
+                configuration.ReadFrom.Configuration(context.Configuration);
+            });
+
+            // Add Data Persistence
+            builder.Services.AddDataPersistence<AppDataContext>(builder.Configuration);
+            builder.Services.AddCoreServices(builder.Configuration);
 
             var app = builder.Build();
 
@@ -27,8 +42,11 @@ namespace SportsData.Venue
 
             app.UseAuthorization();
 
-
             app.MapControllers();
+
+            app.UseSerilogRequestLogging();
+
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
 
             app.Run();
         }
